@@ -11,10 +11,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController = UINavigationController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Routing.shared.setRootViewController(window: self.window, navigationController: self.navigationController)
         
         return true
     }

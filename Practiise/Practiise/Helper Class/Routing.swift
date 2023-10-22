@@ -16,13 +16,12 @@ class Routing {
     
     //MARK: - SET ROOT VIEW CONTROLLER -
     func setRootViewController(window: UIWindow?, navigationController: UINavigationController?) {
-        let storyboard: UIStoryboard = UIStoryboard.main
-        let rootViewController = storyboard.instantiateViewController(withIdentifier: SignUpViewController.className)
-
-        if let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController {
-            navigationController.viewControllers = [rootViewController]
+        let storyboard = UIStoryboard.main
+        
+        if let controller = storyboard.instantiateViewController(withIdentifier: SignUpViewController.className) as? SignUpViewController {
+            let navigationController = UINavigationController(rootViewController: controller) //here...
+            navigationController.storyboard?.instantiateInitialViewController()
             window?.rootViewController = navigationController
-            window?.makeKeyAndVisible()
         }
     }
 }

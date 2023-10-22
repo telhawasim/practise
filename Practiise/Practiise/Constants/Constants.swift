@@ -11,4 +11,5 @@ import UIKit
 class ColorConstants {
     
     static let appColor = "406eb2"
+    static let appGreen = "7dcaae"
 }
